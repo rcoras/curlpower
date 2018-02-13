@@ -10,7 +10,17 @@ const createSurveyFailure = function (error) {
   console.error(error)
 }
 
+const getAllSurveysSuccess = function (data) {
+  console.log('this is the data', data)
+}
+
+const getAllSurveysFailure = function (error) {
+  console.log('success with getting stuff', error)
+}
+
 module.exports = {
   createSurveySuccess,
-  createSurveyFailure
+  createSurveyFailure,
+  getAllSurveysSuccess,
+  getAllSurveysFailure
 }

@@ -14,6 +14,17 @@ const createSurvey = function (data) {
   })
 }
 
+const getAllSurveys = function () {
+  return $.ajax({
+    url: config.apiOrigin + '/surveys',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
-  createSurvey
+  createSurvey,
+  getAllSurveys
 }
