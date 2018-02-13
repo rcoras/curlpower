@@ -18,8 +18,6 @@ const onSignIn = function (event) {
   event.preventDefault()
   api.signIn(data)
     .then(ui.signInSuccess)
-    .then(api.getAllMountains)
-    .then(ui.getAllMountainsSuccess)
     .catch(ui.signInFailure)
 }
 

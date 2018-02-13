@@ -7,7 +7,7 @@ const loadNavHeadTemplate = require('../templates/nav-header.handlebars')
 const showNavTemplate = require('../templates/load-nav.handlebars')
 
 const clearFields = function () {
-  $('input:text, input:password, input[type=email]').val('')
+  $('input:text, input:password').val('')
 }
 
 // displays message to user on successful account creation and pushes the email used to the sign-in form
