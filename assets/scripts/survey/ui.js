@@ -15,12 +15,22 @@ const getAllSurveysSuccess = function (data) {
 }
 
 const getAllSurveysFailure = function (error) {
-  console.log('success with getting stuff', error)
+  console.log('not', error)
+}
+
+const getASurveySuccess = function (data) {
+  console.log('this is working ', data)
+}
+
+const getASurveyFailure = function (error) {
+  console.error(error)
 }
 
 module.exports = {
   createSurveySuccess,
   createSurveyFailure,
   getAllSurveysSuccess,
-  getAllSurveysFailure
+  getAllSurveysFailure,
+  getASurveySuccess,
+  getASurveyFailure
 }

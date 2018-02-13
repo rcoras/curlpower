@@ -19,9 +19,19 @@ const onGetAllSurveys = function (event) {
     .catch(ui.getAllSurveysFailure)
 }
 
+const onGetASurvey = function (event) {
+  const data = getFormFields(this)
+  event.preventDefault()
+  api.getASurvey(data)
+    .then(ui.getASurveySuccess)
+    .catch(ui.getASurveyFailure)
+  console.log(data)
+}
+
 const addHandlers = function () {
   $('.test-survey-crud').on('submit', '#create-survey-form', onCreateSurvey)
   $('.test-survey-crud').on('click', '#survey-get-all', onGetAllSurveys)
+  $('.test-survey-crud').on('submit', '#get-survey-form', onGetASurvey)
 }
 
 module.exports = {
