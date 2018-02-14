@@ -34,8 +34,20 @@ const getASurvey = function (data) {
   })
 }
 
+const updateSurvey = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/surveys/' + data.survey._id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 module.exports = {
   createSurvey,
   getAllSurveys,
-  getASurvey
+  getASurvey,
+  updateSurvey
 }
