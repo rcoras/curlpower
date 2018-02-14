@@ -34,6 +34,14 @@ const updateSurveyFailure = function (error) {
   console.error(error)
 }
 
+const deleteSurveySuccess = function (data) {
+  console.log('this is working ', data)
+}
+
+const deleteSurveyFailure = function (error) {
+  console.error(error)
+}
+
 module.exports = {
   createSurveySuccess,
   createSurveyFailure,
@@ -42,5 +50,7 @@ module.exports = {
   getASurveySuccess,
   getASurveyFailure,
   updateSurveySuccess,
-  updateSurveyFailure
+  updateSurveyFailure,
+  deleteSurveySuccess,
+  deleteSurveyFailure
 }
