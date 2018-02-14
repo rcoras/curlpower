@@ -26,11 +26,21 @@ const getASurveyFailure = function (error) {
   console.error(error)
 }
 
+const updateSurveySuccess = function (data) {
+  console.log('this is working ', data)
+}
+
+const updateSurveyFailure = function (error) {
+  console.error(error)
+}
+
 module.exports = {
   createSurveySuccess,
   createSurveyFailure,
   getAllSurveysSuccess,
   getAllSurveysFailure,
   getASurveySuccess,
-  getASurveyFailure
+  getASurveyFailure,
+  updateSurveySuccess,
+  updateSurveyFailure
 }
