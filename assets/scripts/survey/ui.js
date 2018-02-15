@@ -3,6 +3,7 @@
 const store = require('../store')
 const loadSurveysTemplate = require('../templates/load-surveys.handlebars')
 const loadEditTemplate = require('../templates/edit-survey.handlebars')
+const loadTakeablesTemplate = require('../templates/takeable-surveys.handlebars')
 
 const createSurveySuccess = function (data) {
   console.log('successfully created survey', data)
@@ -16,7 +17,11 @@ const getAllSurveysSuccess = function (data) {
   const showSurveysHtml = loadSurveysTemplate({
     surveys: data.surveys
   })
-  $('#survey-content').append(showSurveysHtml)
+  $('.my-surv').append(showSurveysHtml)
+  const showTakeablesHtml = loadTakeablesTemplate({
+    surveys: data.surveys
+  })
+  $('.take-surv').append(showTakeablesHtml)
   console.log('these are surveys', data)
 }
 
@@ -46,7 +51,8 @@ const updateSurveyFailure = function (error) {
 }
 
 const deleteSurveySuccess = function (data) {
-  const stuff = $(data).parents('div')[1]
+  const stuff = $(data).parents('div')[0]
+  console.log(data)
   $(stuff).html('')
   console.log('this is stuff', stuff)
 }
