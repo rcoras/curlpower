@@ -25,6 +25,7 @@ const getAllSurveysFailure = function (error) {
 }
 
 const getASurveySuccess = function (data) {
+  $('.main').html('')
   const showEditHtml = loadEditTemplate({
     survey: data.survey
   })
@@ -45,7 +46,9 @@ const updateSurveyFailure = function (error) {
 }
 
 const deleteSurveySuccess = function (data) {
-  console.log('this is working ', data)
+  const stuff = $(data).parents('div')[1]
+  $(stuff).html('')
+  console.log('this is stuff', stuff)
 }
 
 const deleteSurveyFailure = function (error) {
