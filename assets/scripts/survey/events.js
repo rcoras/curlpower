@@ -5,6 +5,7 @@ const api = require(`./api`)
 const ui = require('./ui')
 
 const onCreateSurvey = function (event) {
+  console.log('am i getting here?')
   const data = getFormFields(this)
   event.preventDefault()
   api.createSurvey(data)
@@ -60,6 +61,7 @@ const addHandlers = function () {
   $('.main').on('submit', '#update-survey-form', onUpdateSurvey)
   $('#survey-content').on('click', '.delete-survey', onDeleteSurvey)
   $('#survey-content').on('click', '.edit-survey', onEditSurvey)
+  $('.main').on('submit', '#create-survey-form', onCreateSurvey)
 }
 
 module.exports = {
