@@ -58,7 +58,7 @@ const addHandlers = function () {
   $('.test-survey-crud').on('submit', '#create-survey-form', onCreateSurvey)
   $('.test-survey-crud').on('click', '#survey-get-all', onGetAllSurveys)
   $('.test-survey-crud').on('submit', '#get-survey-form', onGetASurvey)
-  $('.test-survey-crud').on('submit', '#update-survey-form', onUpdateSurvey)
+  $('.main').on('submit', '#update-survey-form', onUpdateSurvey)
   $('.test-survey-crud').on('submit', '#delete-survey-form', onDeleteSurvey)
   $('#survey-content').on('click', '.editSurvey', onEditSurvey)
 }

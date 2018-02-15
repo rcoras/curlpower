@@ -25,6 +25,7 @@ const getAllSurveysFailure = function (error) {
 }
 
 const getASurveySuccess = function (data) {
+  $('.main').html('')
   const showEditHtml = loadEditTemplate({
     survey: data.survey
   })
