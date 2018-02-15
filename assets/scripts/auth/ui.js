@@ -6,6 +6,7 @@ const showSignedInNavTemplate = require('../templates/signed-in-nav.handlebars')
 const loadNavHeadTemplate = require('../templates/nav-header.handlebars')
 const showNavTemplate = require('../templates/load-nav.handlebars')
 const showSurveyContentTemplate = require('../templates/survey-content.handlebars')
+const loadCreateSubmissionTemplate = require('../templates/create-submission.handlebars')
 
 const clearFields = function () {
   $('input:text, input:password').val('')
@@ -34,6 +35,11 @@ const surveyContent = function () {
   $('.main').append(showSurveyContentHtml)
 }
 
+const submissionContent = function () {
+  const showSubmissionContentHtml = loadCreateSubmissionTemplate()
+  $('.testsubs').append(showSubmissionContentHtml)
+}
+
 const signInSuccess = function (data) {
   store.user = data.user
   clearFields()
@@ -41,6 +47,7 @@ const signInSuccess = function (data) {
   navHeader()
   $('#main-content').html('')
   surveyContent()
+  submissionContent()
   console.log('store is, ', store)
 }
 
