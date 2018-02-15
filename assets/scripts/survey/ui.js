@@ -11,7 +11,7 @@ const createSurveyFailure = function (error) {
 }
 
 const getAllSurveysSuccess = function (data) {
-  console.log('this is the data', data)
+  console.log('these are surveys', data)
 }
 
 const getAllSurveysFailure = function (error) {

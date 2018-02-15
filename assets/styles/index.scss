@@ -47,14 +47,22 @@ body {
   width: 375px;
 }
 
-.main,
-.test-survey-crud {
+.main {
   border: 1px solid $black;
   height: 400px;
   margin-top: 80px;
   min-width: 400px;
   overflow-y: scroll;
   text-align: center;
+  width: 90%;
+}
+
+.surveys {
+  border: 1px solid $black;
+  height: 400px;
+}
+
+.surv {
   width: 90%;
 }
 
