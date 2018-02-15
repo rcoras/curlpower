@@ -24,7 +24,7 @@ const getAllSurveysFailure = function (error) {
 }
 
 const getASurveySuccess = function (data) {
-  console.log('this is working ', data)
+  console.log('editable survey ', data)
 }
 
 const getASurveyFailure = function (error) {

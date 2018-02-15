@@ -25,8 +25,9 @@ const getAllSurveys = function () {
 }
 
 const getASurvey = function (data) {
+  const id = $(data).data('mySurveyId')
   return $.ajax({
-    url: config.apiOrigin + '/surveys/' + data.survey._id,
+    url: config.apiOrigin + '/surveys/' + id,
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token

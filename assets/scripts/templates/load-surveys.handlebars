@@ -1,12 +1,21 @@
 {{#each surveys as |survey|}}
   <div class="row" style="margin-bottom: 2px;">
-    <div data-id="{{survey._id}}" class="col-xs-12">
-      <div id="my-surveys" class="col-xs-8 my-surveys surveys">
+    <div class="col-xs-12">
+      <div data-my-survey-id="{{survey._id}}" class="col-xs-8 my-surveys surveys">
         {{survey.title}}
+        <button type="button" class="editSurvey" name="button">
+          Edit Me
+        </button>
+        <button type="button" class="deleteSurvey" name="button">
+          Delete Me
+        </button>
       </div>
       <div class="empty-space-div col-xs-1"></div>
-      <div id="take-surveys" class="col-xs-3 take-surveys surveys">
-        {{survey.question}}
+      <div data-takeable-id="{{survey._id}}" class="col-xs-3 take-surveys surveys">
+        {{survey.title}}
+        <button type="button" class="takeSurvey" name="button">
+          Take Me
+        </button>
       </div>
     </div>
   </div>
