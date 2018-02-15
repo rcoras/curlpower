@@ -2,6 +2,7 @@
 
 const store = require('../store')
 const loadSurveysTemplate = require('../templates/load-surveys.handlebars')
+const loadEditTemplate = require('../templates/edit-survey.handlebars')
 
 const createSurveySuccess = function (data) {
   console.log('successfully created survey', data)
@@ -24,6 +25,10 @@ const getAllSurveysFailure = function (error) {
 }
 
 const getASurveySuccess = function (data) {
+  const showEditHtml = loadEditTemplate({
+    survey: data.survey
+  })
+  $('.main').append(showEditHtml)
   console.log('editable survey ', data)
 }
 
