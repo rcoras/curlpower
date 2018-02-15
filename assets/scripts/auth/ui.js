@@ -5,7 +5,7 @@ const showMainTemplate = require('../templates/main-view.handlebars')
 const showSignedInNavTemplate = require('../templates/signed-in-nav.handlebars')
 const loadNavHeadTemplate = require('../templates/nav-header.handlebars')
 const showNavTemplate = require('../templates/load-nav.handlebars')
-// const showSurveyCrudTemplate = require('../templates/survey-crud.handlebars')
+const showSurveyContentTemplate = require('../templates/survey-content.handlebars')
 
 const clearFields = function () {
   $('input:text, input:password').val('')
@@ -29,10 +29,10 @@ const navHeader = function () {
   $('.navbar-header').prepend(showNavHeaderHtml)
 }
 
-// const surveyCrud = function () {
-//   const showSurveyCrudHtml = showSurveyCrudTemplate()
-//   $('.test-survey-crud').append(showSurveyCrudHtml)
-// }
+const surveyContent = function () {
+  const showSurveyContentHtml = showSurveyContentTemplate()
+  $('.main').append(showSurveyContentHtml)
+}
 
 const signInSuccess = function (data) {
   store.user = data.user
@@ -40,7 +40,7 @@ const signInSuccess = function (data) {
   signedInNav()
   navHeader()
   $('#main-content').html('')
-  // surveyCrud()
+  surveyContent()
   console.log('store is, ', store)
 }
 
