@@ -118,5 +118,6 @@ module.exports = {
   changePasswordFailure,
   signOutSuccess,
   loadNav,
-  mainView
+  mainView,
+  surveyContent
 }
