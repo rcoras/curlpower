@@ -93,6 +93,7 @@ const signOutSuccess = function () {
   mainView()
   loadNav()
   $('.status-message-change-password').text('')
+  $('.user-actions').html('')
   store.user = undefined
 }
 

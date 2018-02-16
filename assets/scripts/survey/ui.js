@@ -23,6 +23,8 @@ const rButton = function () {
 }
 
 const getAllSurveysSuccess = function (data) {
+  $('.my-surv').html('')
+  $('.take-surv').html('')
   const mySurveys = []
   const takeableSurveys = []
   data.surveys.forEach(function (survey) {
