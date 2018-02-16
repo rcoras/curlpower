@@ -55,7 +55,7 @@ const onEditSurvey = function (event) {
 
 const addHandlers = function () {
   $('.test-survey-crud').on('submit', '#create-survey-form', onCreateSurvey)
-  $('.test-survey-crud').on('click', '#survey-get-all', onGetAllSurveys)
+  $('.user-actions').on('click', '.refresh-survey-button', onGetAllSurveys)
   $('.test-survey-crud').on('submit', '#get-survey-form', onGetASurvey)
   $('.main').on('submit', '#update-survey-form', onUpdateSurvey)
   $('.main').on('click', '.delete-survey', onDeleteSurvey)

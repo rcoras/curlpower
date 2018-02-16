@@ -4,6 +4,8 @@ const store = require('../store')
 const loadSurveysTemplate = require('../templates/load-surveys.handlebars')
 const loadEditTemplate = require('../templates/edit-survey.handlebars')
 const loadTakeablesTemplate = require('../templates/takeable-surveys.handlebars')
+const loadRefreshTemplate = require('../templates/refresh-survey-button.handlebars')
+const loadCreateButtonTemplate = require('../templates/create-survey-button.handlebars')
 
 const createSurveySuccess = function (data) {
   console.log('successfully created survey', data)
@@ -13,7 +15,16 @@ const createSurveyFailure = function (error) {
   console.error(error)
 }
 
+const rButton = function () {
+  const showRButtonHtml = loadRefreshTemplate()
+  if ($('.refresh-survey').html('')) {
+    $('.refresh-survey').append(showRButtonHtml)
+  }
+}
+
 const getAllSurveysSuccess = function (data) {
+  $('.my-surv').html('')
+  $('.take-surv').html('')
   const mySurveys = []
   const takeableSurveys = []
   data.surveys.forEach(function (survey) {
@@ -32,6 +43,7 @@ const getAllSurveysSuccess = function (data) {
   })
   $('.take-surv').append(showTakeablesHtml)
   console.log('these are surveys', data)
+  rButton()
 }
 
 const getAllSurveysFailure = function (error) {
