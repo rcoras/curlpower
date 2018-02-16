@@ -3,6 +3,7 @@
 const getFormFields = require(`../../../lib/get-form-fields`)
 const api = require(`./api`)
 const ui = require('./ui')
+const authUi = require('../auth/ui')
 
 const onCreateSurvey = function (event) {
   const data = getFormFields(this)
@@ -14,6 +15,8 @@ const onCreateSurvey = function (event) {
 
 const onGetAllSurveys = function (event) {
   event.preventDefault()
+  $('.main').html('')
+  authUi.surveyContent()
   api.getAllSurveys()
     .then(ui.getAllSurveysSuccess)
     .catch(ui.getAllSurveysFailure)
@@ -58,6 +61,7 @@ const onLoadSurveyForm = function () {
 }
 
 const addHandlers = function () {
+  $('.main').on('click', '.close-form', onGetAllSurveys)
   $('.user-actions').on('click', '.create-survey-button', onLoadSurveyForm)
   $('.user-actions').on('click', '.refresh-survey-button', onGetAllSurveys)
   $('.test-survey-crud').on('submit', '#get-survey-form', onGetASurvey)
