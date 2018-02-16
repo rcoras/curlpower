@@ -7,6 +7,7 @@ const loadNavHeadTemplate = require('../templates/nav-header.handlebars')
 const showNavTemplate = require('../templates/load-nav.handlebars')
 const showSurveyContentTemplate = require('../templates/survey-content.handlebars')
 const loadUserActionsTemplate = require('../templates/user-actions.handlebars')
+const loadFeedbackMessageTemplate = require('../templates/feedback-message.handlebars')
 
 const clearFields = function () {
   $('input:text, input:password').val('')
@@ -40,6 +41,13 @@ const userActions = function () {
   $('.user-actions').append(showUserActionsHtml)
 }
 
+const feedbackMessageDiv = function () {
+  const showFeedbackMessageHtml = loadFeedbackMessageTemplate()
+  if ($('.feedback-message-div').html('')) {
+    $('.feedback-message-div').append(showFeedbackMessageHtml)
+  }
+}
+
 const signInSuccess = function (data) {
   store.user = data.user
   clearFields()
@@ -48,6 +56,7 @@ const signInSuccess = function (data) {
   $('#main-content').html('')
   surveyContent()
   userActions()
+  feedbackMessageDiv()
   console.log('store is, ', store)
 }
 
