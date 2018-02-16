@@ -5,7 +5,6 @@ const api = require(`./api`)
 const ui = require('./ui')
 
 const onCreateSurvey = function (event) {
-  console.log('am i getting here?')
   const data = getFormFields(this)
   event.preventDefault()
   api.createSurvey(data)

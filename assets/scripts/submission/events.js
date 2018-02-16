@@ -3,18 +3,28 @@
 const getFormFields = require(`../../../lib/get-form-fields`)
 const api = require(`./api`)
 const ui = require('./ui')
+const survApi = require('../survey/api')
+// const survUi = require('../survey/ui')
 
 const onCreateSubmission = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
-  console.log('fucking right', data)
   api.createSubmission(data)
     .then(ui.createSubmissionSuccess)
     .catch(ui.createSubmissionFailure)
 }
 
+const onTakeSurvey = function (event) {
+  event.preventDefault()
+  const takeableDiv = $(this).parent('div')
+  survApi.getASurvey(takeableDiv)
+    .then(ui.displaySurveySuccess)
+    .catch(ui.displaySurveyFailure)
+}
+
 const addHandlers = function () {
-  $('.testsubs').on('submit', '#create-submission-form', onCreateSubmission)
+  $('.main').on('submit', '#create-submission-form', onCreateSubmission)
+  $('.main').on('click', '.take-survey', onTakeSurvey)
 }
 
 module.exports = {
