@@ -1,17 +1,23 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 $black: #000;
-$background: #ccc;
+$background: #eeeedd;
 $main-color: #8c9aff;
 $message-color: #cc4f5c;
 $red: #d00;
 $white: #ddd;
+
 
 body {
   background-color: $background;
   height: auto;
   max-width: 1200px;
   width: 100%;
+}
+
+button {
+  float: right;
+  padding: 3px;
 }
 
 .app-title {
@@ -37,6 +43,10 @@ body {
   }
 }
 
+h2 {
+  text-align: center;
+}
+
 .dropdown-menu {
   width: 300px;
 }
@@ -54,24 +64,44 @@ body {
 .main {
   // border: 1px solid $black;
   height: 400px;
-  margin-top: 80px;
+  margin-top: 20px;
   min-width: 400px;
   // overflow-y: scroll;
   text-align: center;
   width: 90%;
 }
 
+.navbar {
+  border: 0;
+  background-color: #888844;
+}
+
 .surveys {
-  border: 1px solid $black;
-  height: 25px;
+  background-color: #fff;
+  height: 30px;
+  text-align: left;
+  // border: 1px solid $black;
+}
+
+.create-survey-button {
+  margin-left: 29px;
+}
+
+.refresh-survey-button {
+  margin-right: 29px;
+}
+
+.radio-style {
+  font-size: 30px;
+  margin-left: auto;
 }
 
 .surv {
-  width: 100%;
   border: 1px solid $black;
   height: 400px;
   min-width: 400px;
   overflow-y: scroll;
+  width: 100%;
 }
 
 .form {
@@ -85,6 +115,7 @@ body {
 }
 
 .user-actions {
-  border: 1px solid $black;
+  font-size: 18px;
+  // border: 1px solid $black;
   height: 50px;
 }
