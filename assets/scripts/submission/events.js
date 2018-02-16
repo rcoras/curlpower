@@ -4,13 +4,17 @@ const getFormFields = require(`../../../lib/get-form-fields`)
 const api = require(`./api`)
 const ui = require('./ui')
 const survApi = require('../survey/api')
-// const survUi = require('../survey/ui')
+const survEvents = require('../survey/events')
 
 const onCreateSubmission = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
   api.createSubmission(data)
-    .then(ui.createSubmissionSuccess)
+    .then(data => {
+      ui.createSubmissionSuccess(data)
+      survEvents.onGetAllSurveys()
+      return data
+    })
     .catch(ui.createSubmissionFailure)
 }
 
