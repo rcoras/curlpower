@@ -14,17 +14,21 @@ const createSurveyFailure = function (error) {
 }
 
 const getAllSurveysSuccess = function (data) {
-  // data is going to be checked for survey._owner
-  // against store.user._id
-  // if true, move to one array, if false move to another
-  // pass in true array to showSurveysHtml
-  // pass in false array to showTakeablesHtml
+  const mySurveys = []
+  const takeableSurveys = []
+  data.surveys.forEach(function (survey) {
+    if (survey._owner === store.user._id) {
+      mySurveys.push(survey)
+    } else {
+      takeableSurveys.push(survey)
+    }
+  })
   const showSurveysHtml = loadSurveysTemplate({
-    surveys: data.surveys
+    surveys: mySurveys
   })
   $('.my-surv').append(showSurveysHtml)
   const showTakeablesHtml = loadTakeablesTemplate({
-    surveys: data.surveys
+    surveys: takeableSurveys
   })
   $('.take-surv').append(showTakeablesHtml)
   console.log('these are surveys', data)
