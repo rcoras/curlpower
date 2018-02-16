@@ -9,11 +9,18 @@ const loadCreateSurveyFormTemplate = require('../templates/create-survey-form.ha
 const loadCreateButtonTemplate = require('../templates/create-survey-button.handlebars')
 
 const createSurveySuccess = function (data) {
-  console.log('successfully created survey', data)
+  $('.feedback-message').html('')
+  $('.feedback-message').show()
+  $('.feedback-message').html('Survey Created!!')
+  $('.feedback-message').fadeOut(2500)
 }
 
 const createSurveyFailure = function (error) {
   console.error(error)
+  $('.feedback-message').html('')
+  $('.feedback-message').show()
+  $('.feedback-message').html('There was an error. Please try again')
+  $('.feedback-message').fadeOut(2500)
 }
 
 const loadSurveyForm = function () {
@@ -79,22 +86,35 @@ const getASurveyFailure = function (error) {
 }
 
 const updateSurveySuccess = function (data) {
-  console.log('this is working ', data)
+  $('.feedback-message').html('')
+  $('.feedback-message').show()
+  $('.feedback-message').html('Your survey has been updated!')
+  $('.feedback-message').fadeOut(2500)
 }
 
 const updateSurveyFailure = function (error) {
   console.error(error)
+  $('.feedback-message').html('')
+  $('.feedback-message').show()
+  $('.feedback-message').html('There was an error. Please try again')
+  $('.feedback-message').fadeOut(2500)
 }
 
 const deleteSurveySuccess = function (data) {
-  const stuff = $(data).parents('div')[0]
-  console.log(data)
-  $(stuff).html('')
-  console.log('this is stuff', stuff)
+  const surveyDiv = $(data).parents('div')[0]
+  $(surveyDiv).html('')
+  $('.feedback-message').html('')
+  $('.feedback-message').show()
+  $('.feedback-message').html('That survey has been deleted')
+  $('.feedback-message').fadeOut(2500)
 }
 
 const deleteSurveyFailure = function (error) {
   console.error(error)
+  $('.feedback-message').html('')
+  $('.feedback-message').show()
+  $('.feedback-message').html('There was an error deleting. Please try again.')
+  $('.feedback-message').fadeOut(2500)
 }
 
 module.exports = {

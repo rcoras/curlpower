@@ -16,7 +16,10 @@ const displaySurveyFailure = function (error) {
 }
 
 const createSubmissionSuccess = function (data) {
-  console.log('submisson', data)
+  $('.feedback-message').html('')
+  $('.feedback-message').show()
+  $('.feedback-message').html('Your answer has been submitted')
+  $('.feedback-message').fadeOut(2500)
 }
 
 const createSubmissionFailure = function (error) {
