@@ -1,2 +1,90 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+$black: #000;
+$background: #ccc;
+$main-color: #8c9aff;
+$message-color: #cc4f5c;
+$red: #d00;
+$white: #ddd;
+
+body {
+  background-color: $background;
+  height: auto;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.app-title {
+  color: $white;
+}
+
+.radio {
+  width: 100px;
+}
+
+.collapse {
+  color: $main-color;
+}
+
+.input {
+  &:invalid {
+    border: 1px solid $main-color;
+    border-bottom: 2px dashed $red;
+  }
+
+  &:valid {
+    border: 1px solid $main-color;
+  }
+}
+
+.dropdown-menu {
+  width: 300px;
+}
+
+.message {
+  clear: both;
+  color: $message-color;
+  font-size: 1.25em;
+  height: 1.5em;
+  margin: 0 auto;
+  text-align: center;
+  width: 375px;
+}
+
+.main {
+  // border: 1px solid $black;
+  height: 400px;
+  margin-top: 80px;
+  min-width: 400px;
+  // overflow-y: scroll;
+  text-align: center;
+  width: 90%;
+}
+
+.surveys {
+  border: 1px solid $black;
+  height: 25px;
+}
+
+.surv {
+  width: 100%;
+  border: 1px solid $black;
+  height: 400px;
+  min-width: 400px;
+  overflow-y: scroll;
+}
+
+.form {
+  border: 1px solid $black;
+  height: 250px;
+
+  &.sign-in,
+  &.sign-up {
+    border: 0;
+  }
+}
+
+.user-actions {
+  border: 1px solid $black;
+  height: 50px;
+}

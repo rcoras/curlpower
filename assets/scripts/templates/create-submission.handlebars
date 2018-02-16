@@ -1,0 +1,20 @@
+<h2 class="text-center">Create Submission</h2>
+<form id="create-submission-form" autocomplete="off">
+  <div class="form-group">
+    <input type="hidden" name="surveyid" id="submission-surv-id" value="{{survey._id}}" class="form-control input">
+  </div>
+  <div class="form-group">
+    <h5>Question: <br> {{survey.question}}</h5>
+  </div>
+  <div class="form-group radio">
+    <label><input type="radio" name="submissions[answer]" id="submission-answer-true" class="form-control input true-radio" value="true">true</label>
+    <label><input type="radio" name="submissions[answer]" id="submission-answer-false" class="form-control input false-radio" value="false">false<br></label>
+  </div>
+  <div class="form-group">
+    <div class="row">
+      <div class="col-xs-6 col-xs-offset-3">
+        <input type="submit" name="create-submission-submit" id="create-submission-submit" class="form-control btn btn-primary" value="Confirm">
+      </div>
+    </div>
+  </div>
+</form>

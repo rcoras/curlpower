@@ -1,0 +1,21 @@
+<button class="close-form" style="float: right;">X</button>
+<form id="update-survey-form">
+  <div class="form-group">
+    <input type="hidden" value="{{survey._id}}" name="survey[_id]" id="survey-update-id" class="form-control input">
+  </div>
+  <div class="form-group">
+    <h3>Title:</h3>
+    <input type="text" value="{{survey.title}}" name="survey[title]" id="survey-update-title" class="form-control input" placeholder="{{survey.title}}" minlength="1" required>
+  </div>
+  <div class="form-group">
+    <h3>Question:</h3>
+    <input type="text" value="{{survey.question}}" name="survey[question]" id="survey-update-height" class="form-control input" placeholder="{{survey.question}}" minlength="1" required>
+  </div>
+  <div class="form-group">
+    <div class="row">
+      <div class="col-xs-6 col-xs-offset-3">
+        <input type="submit" name="update-survey-submit" id="update-survey-submit" class="form-control btn btn-primary" value="Confirm">
+      </div>
+    </div>
+  </div>
+</form>

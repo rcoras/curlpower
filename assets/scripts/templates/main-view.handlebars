@@ -1,0 +1,45 @@
+<div class="col-xs-6 form sign-in">
+  <h5 class="text-center">Sign-In</h5>
+  <form id="sign-in-form" role="form" autocomplete="off">
+    <div class="form-group">
+      <input type="text" name="credentials[email]" id="sign-in-email" class="form-control input" placeholder="Email" value="" autocomplete="off" required>
+    </div>
+    <div class="form-group">
+      <input type="password" name="credentials[password]" id="sign-in-password" class="form-control input" placeholder="Password" autocomplete="off" minlength="3" required>
+    </div>
+    <div class="status-message-div">
+      <p class="status-message-sign-in"></p>
+    </div>
+    <div class="form-group">
+      <div class="row">
+        <div class="col-xs-6 col-xs-offset-3">
+          <input type="submit" name="login-submit" id="sign-in-submit" class="form-control btn btn-success" value="Sign In">
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="col-xs-6 form sign-up">
+  <h5 class="text-center">No Account? Sign-Up</h5>
+  <form id="sign-up-form" autocomplete="off">
+    <div class="form-group">
+      <input type="text" name="credentials[email]" id="sign-up-email" class="form-control input" placeholder="Email Address" value="" required>
+    </div>
+    <div class="form-group">
+      <input type="password" name="credentials[password]" id="sign-up-password" class="form-control input" placeholder="Password" minlength="3" required>
+    </div>
+    <div class="form-group">
+      <input type="password" name="credentials[password_confirmation]" id="confirm-password" class="form-control input" placeholder="Confirm Password" minlength="3" required>
+    </div>
+    <div class="status-message-div">
+      <p class="status-message-sign-up"></p>
+    </div>
+    <div class="form-group">
+      <div class="row">
+        <div class="col-xs-6 col-xs-offset-3">
+          <input type="submit" name="submit" id="sign-up-submit" class="form-control btn btn-success" value="Create">
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
