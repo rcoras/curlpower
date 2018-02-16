@@ -9,12 +9,15 @@ const onCreateSurvey = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
   api.createSurvey(data)
-    .then(ui.createSurveySuccess)
+    .then(data => {
+      ui.createSurveySuccess(data)
+      onGetAllSurveys()
+      return data
+    })
     .catch(ui.createSurveyFailure)
 }
 
-const onGetAllSurveys = function (event) {
-  event.preventDefault()
+const onGetAllSurveys = function () {
   $('.main').html('')
   authUi.surveyContent()
   api.getAllSurveys()
@@ -34,7 +37,11 @@ const onUpdateSurvey = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
   api.updateSurvey(data)
-    .then(ui.updateSurveySuccess)
+    .then(data => {
+      ui.updateSurveySuccess(data)
+      onGetAllSurveys()
+      return data
+    })
     .catch(ui.updateSurveyFailure)
   console.log(data)
 }
@@ -72,5 +79,6 @@ const addHandlers = function () {
 }
 
 module.exports = {
-  addHandlers
+  addHandlers,
+  onGetAllSurveys
 }
