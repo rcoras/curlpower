@@ -52,11 +52,11 @@ body {
 }
 
 .main {
-  border: 1px solid $black;
+  // border: 1px solid $black;
   height: 400px;
   margin-top: 80px;
   min-width: 400px;
-  overflow-y: scroll;
+  // overflow-y: scroll;
   text-align: center;
   width: 90%;
 }
@@ -67,9 +67,10 @@ body {
 }
 
 .surv {
-  width: 90%;
+  width: 100%;
   border: 1px solid $black;
-  height: 500px;
+  height: 400px;
+  min-width: 400px;
   overflow-y: scroll;
 }
 
