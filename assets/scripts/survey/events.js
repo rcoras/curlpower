@@ -53,8 +53,12 @@ const onEditSurvey = function (event) {
   console.log(surveyDiv)
 }
 
+const onLoadSurveyForm = function () {
+  ui.loadSurveyForm()
+}
+
 const addHandlers = function () {
-  $('.test-survey-crud').on('submit', '#create-survey-form', onCreateSurvey)
+  $('.user-actions').on('click', '.create-survey-button', onLoadSurveyForm)
   $('.user-actions').on('click', '.refresh-survey-button', onGetAllSurveys)
   $('.test-survey-crud').on('submit', '#get-survey-form', onGetASurvey)
   $('.main').on('submit', '#update-survey-form', onUpdateSurvey)

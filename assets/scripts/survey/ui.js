@@ -5,6 +5,7 @@ const loadSurveysTemplate = require('../templates/load-surveys.handlebars')
 const loadEditTemplate = require('../templates/edit-survey.handlebars')
 const loadTakeablesTemplate = require('../templates/takeable-surveys.handlebars')
 const loadRefreshTemplate = require('../templates/refresh-survey-button.handlebars')
+const loadCreateSurveyFormTemplate = require('../templates/create-survey-form.handlebars')
 const loadCreateButtonTemplate = require('../templates/create-survey-button.handlebars')
 
 const createSurveySuccess = function (data) {
@@ -15,10 +16,23 @@ const createSurveyFailure = function (error) {
   console.error(error)
 }
 
+const loadSurveyForm = function () {
+  const showSurveyFormHtml = loadCreateSurveyFormTemplate()
+  $('.main').html('')
+  $('.main').append(showSurveyFormHtml)
+}
+
 const rButton = function () {
   const showRButtonHtml = loadRefreshTemplate()
   if ($('.refresh-survey').html('')) {
     $('.refresh-survey').append(showRButtonHtml)
+  }
+}
+
+const crButton = function () {
+  const showCrButtonHtml = loadCreateButtonTemplate()
+  if ($('.create-survey').html('')) {
+    $('.create-survey').append(showCrButtonHtml)
   }
 }
 
@@ -44,6 +58,7 @@ const getAllSurveysSuccess = function (data) {
   $('.take-surv').append(showTakeablesHtml)
   console.log('these are surveys', data)
   rButton()
+  crButton()
 }
 
 const getAllSurveysFailure = function (error) {
@@ -92,5 +107,6 @@ module.exports = {
   updateSurveySuccess,
   updateSurveyFailure,
   deleteSurveySuccess,
-  deleteSurveyFailure
+  deleteSurveyFailure,
+  loadSurveyForm
 }
