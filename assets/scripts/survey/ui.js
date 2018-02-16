@@ -14,6 +14,11 @@ const createSurveyFailure = function (error) {
 }
 
 const getAllSurveysSuccess = function (data) {
+  // data is going to be checked for survey._owner
+  // against store.user._id
+  // if true, move to one array, if false move to another
+  // pass in true array to showSurveysHtml
+  // pass in false array to showTakeablesHtml
   const showSurveysHtml = loadSurveysTemplate({
     surveys: data.surveys
   })
