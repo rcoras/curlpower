@@ -8,6 +8,9 @@ $red: #d00;
 $white: #ddd;
 
 
+li {
+  color: $white;
+}
 body {
   background-color: $background;
   height: auto;
@@ -26,6 +29,7 @@ button {
 
 .radio {
   width: 100px;
+  padding: 40px;
 }
 
 .collapse {
@@ -49,6 +53,22 @@ h2 {
 
 .dropdown-menu {
   width: 300px;
+}
+
+.edit-survey {
+  margin-left: 10px;
+  background-color: #4d4dff;
+  color: $white;
+}
+
+.delete-survey {
+  background-color: #990000;
+  color: $white;
+}
+
+.take-survey {
+  background-color: #C0C0C0;
+  color: $black;
 }
 
 .message {
@@ -93,7 +113,9 @@ h2 {
 
 .radio-style {
   font-size: 30px;
-  margin-left: auto;
+  margin-left: 100px;
+  text-align: center;
+  border: 0;
 }
 
 .surv {

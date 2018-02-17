@@ -43,7 +43,6 @@ const onUpdateSurvey = function (event) {
       return data
     })
     .catch(ui.updateSurveyFailure)
-  console.log(data)
 }
 
 const onDeleteSurvey = function (event) {
@@ -60,7 +59,6 @@ const onEditSurvey = function (event) {
   api.getASurvey(surveyDiv)
     .then(ui.getASurveySuccess)
     .catch(ui.getASurveyFailure)
-  console.log(surveyDiv)
 }
 
 const onLoadSurveyForm = function () {
