@@ -57,7 +57,7 @@ const signInSuccess = function (data) {
   surveyContent()
   userActions()
   feedbackMessageDiv()
-  console.log('store is, ', store)
+  // console.log('store is, ', store)
 }
 
 const signInFailure = function (error) {
@@ -87,7 +87,7 @@ const changePasswordSuccess = function (data) {
 
 const changePasswordFailure = function (error) {
   const errorStatus = error.status.toString()
-  console.log('cp store is', store)
+  // console.log('cp store is', store)
   if (errorStatus.startsWith('4') === true) {
     $('.status-message-change-password').text('Incorrect Old Password.')
   } else if (errorStatus.startsWith('5') === true || errorStatus.startsWith('0') === true) {
