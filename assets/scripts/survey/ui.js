@@ -64,13 +64,13 @@ const getAllSurveysSuccess = function (data) {
     surveys: takeableSurveys
   })
   $('.take-surv').append(showTakeablesHtml)
-  console.log('these are surveys', data)
+  // console.log('these are surveys', data)
   rButton()
   crButton()
 }
 
-const getAllSurveysFailure = function (error) {
-  console.log('not', error)
+const getAllSurveysFailure = function () {
+  $('.feedback-message').html('Error. Please try again')
 }
 
 const getASurveySuccess = function (data) {
@@ -79,11 +79,11 @@ const getASurveySuccess = function (data) {
     survey: data.survey
   })
   $('.main').append(showEditHtml)
-  console.log('editable survey ', data)
+  // console.log('editable survey ', data)
 }
 
-const getASurveyFailure = function (error) {
-  console.error(error)
+const getASurveyFailure = function () {
+  $('.feedback-message').html('Error. Please try again')
 }
 
 const updateSurveySuccess = function (data) {

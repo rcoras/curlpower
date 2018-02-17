@@ -11,8 +11,8 @@ const displaySurveySuccess = function (data) {
   $('.main').append(showSubmissionContentHtml)
 }
 
-const displaySurveyFailure = function (error) {
-  console.error('hopefully we don\'t see this', error)
+const displaySurveyFailure = function () {
+  $('.feedback-message').html('Error. Please try again')
 }
 
 const createSubmissionSuccess = function (data) {
@@ -22,8 +22,8 @@ const createSubmissionSuccess = function (data) {
   $('.feedback-message').fadeOut(2500)
 }
 
-const createSubmissionFailure = function (error) {
-  console.error('hopefully we don\'t see this', error)
+const createSubmissionFailure = function () {
+  $('.feedback-message').html('Error. Please try again')
 }
 
 module.exports = {
