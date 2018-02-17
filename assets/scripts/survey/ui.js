@@ -8,19 +8,20 @@ const loadRefreshTemplate = require('../templates/refresh-survey-button.handleba
 const loadCreateSurveyFormTemplate = require('../templates/create-survey-form.handlebars')
 const loadCreateButtonTemplate = require('../templates/create-survey-button.handlebars')
 
-const createSurveySuccess = function (data) {
+const addMessage = function (message) {
   $('.feedback-message').html('')
   $('.feedback-message').show()
-  $('.feedback-message').html('Survey Created!!')
+  $('.feedback-message').html(message)
   $('.feedback-message').fadeOut(2500)
+}
+
+const createSurveySuccess = function (data) {
+  addMessage('Survey Created!!')
 }
 
 const createSurveyFailure = function (error) {
   console.error(error)
-  $('.feedback-message').html('')
-  $('.feedback-message').show()
-  $('.feedback-message').html('There was an error. Please try again')
-  $('.feedback-message').fadeOut(2500)
+  addMessage('Error. Please try again.')
 }
 
 const loadSurveyForm = function () {
@@ -86,35 +87,23 @@ const getASurveyFailure = function (error) {
 }
 
 const updateSurveySuccess = function (data) {
-  $('.feedback-message').html('')
-  $('.feedback-message').show()
-  $('.feedback-message').html('Your survey has been updated!')
-  $('.feedback-message').fadeOut(2500)
+  addMessage('Your survey has been updated')
 }
 
 const updateSurveyFailure = function (error) {
   console.error(error)
-  $('.feedback-message').html('')
-  $('.feedback-message').show()
-  $('.feedback-message').html('There was an error. Please try again')
-  $('.feedback-message').fadeOut(2500)
+  addMessage('Error. Please try again')
 }
 
 const deleteSurveySuccess = function (data) {
   const surveyDiv = $(data).parents('div')[0]
   $(surveyDiv).html('')
-  $('.feedback-message').html('')
-  $('.feedback-message').show()
-  $('.feedback-message').html('That survey has been deleted')
-  $('.feedback-message').fadeOut(2500)
+  addMessage('The survey has been deleted')
 }
 
 const deleteSurveyFailure = function (error) {
   console.error(error)
-  $('.feedback-message').html('')
-  $('.feedback-message').show()
-  $('.feedback-message').html('There was an error deleting. Please try again.')
-  $('.feedback-message').fadeOut(2500)
+  addMessage('Error. Please try again')
 }
 
 module.exports = {
