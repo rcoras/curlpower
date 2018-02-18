@@ -75,7 +75,7 @@ const signUpFailure = function (error) {
   if (errorStatus.startsWith('4') === true) {
     $('.status-message-sign-up').text('Invalid Email or Password.')
   } else if (errorStatus.startsWith('5') === true || errorStatus.startsWith('0') === true) {
-    $('.status-message-sign-up').text('Unable to contact server.')
+    $('.status-message-sign-up').text('Invalid Email or Password.')
   }
   clearFields()
 }

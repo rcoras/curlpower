@@ -19,11 +19,14 @@ const createSubmissionSuccess = function (data) {
   $('.feedback-message').html('')
   $('.feedback-message').show()
   $('.feedback-message').html('Your answer has been submitted')
-  $('.feedback-message').fadeOut(2500)
+  $('.feedback-message').fadeOut(4000)
 }
 
 const createSubmissionFailure = function () {
-  $('.feedback-message').html('Error. Please try again')
+  $('.feedback-message').html('')
+  $('.feedback-message').show()
+  $('.feedback-message').html('Please choose an answer')
+  $('.feedback-message').fadeOut(4000)
 }
 
 module.exports = {
