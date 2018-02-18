@@ -55,6 +55,24 @@ const getAllSurveysSuccess = function (data) {
       takeableSurveys.push(survey)
     }
   })
+
+  mySurveys.forEach(survey => {
+    survey.stats = {
+      truth: 0,
+      falsey: 0,
+      total: 0
+    }
+    survey.submissions.forEach(submission => {
+      if (submission.answer === true) {
+        survey.stats.truth++
+        survey.stats.total++
+      } else {
+        survey.stats.falsey++
+        survey.stats.total++
+      }
+    })
+  })
+
   const showSurveysHtml = loadSurveysTemplate({
     surveys: mySurveys
   })
