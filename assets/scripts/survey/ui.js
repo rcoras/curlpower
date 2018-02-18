@@ -8,19 +8,19 @@ const loadRefreshTemplate = require('../templates/refresh-survey-button.handleba
 const loadCreateSurveyFormTemplate = require('../templates/create-survey-form.handlebars')
 const loadCreateButtonTemplate = require('../templates/create-survey-button.handlebars')
 
-const addMessage = function (message) {
-  $('.feedback-message').html('')
-  $('.feedback-message').show()
-  $('.feedback-message').html(message)
-  $('.feedback-message').fadeOut(4000)
+const addMessage = function (element, message) {
+  $(element).html('')
+  $(element).show()
+  $(element).html(message)
+  $(element).fadeOut(4000)
 }
 
 const createSurveySuccess = function (data) {
-  addMessage('Survey Created!!')
+  addMessage('.feedback-message', 'Survey Created!!')
 }
 
 const createSurveyFailure = function () {
-  addMessage('Error. Please try again.')
+  addMessage('.feedback-message', 'Error. Please try again.')
 }
 
 const loadSurveyForm = function () {
@@ -55,6 +55,24 @@ const getAllSurveysSuccess = function (data) {
       takeableSurveys.push(survey)
     }
   })
+
+  mySurveys.forEach(survey => {
+    survey.stats = {
+      truth: 0,
+      falsey: 0,
+      total: 0
+    }
+    survey.submissions.forEach(submission => {
+      if (submission.answer === true) {
+        survey.stats.truth++
+        survey.stats.total++
+      } else {
+        survey.stats.falsey++
+        survey.stats.total++
+      }
+    })
+  })
+
   const showSurveysHtml = loadSurveysTemplate({
     surveys: mySurveys
   })
@@ -69,7 +87,7 @@ const getAllSurveysSuccess = function (data) {
 }
 
 const getAllSurveysFailure = function () {
-  $('.feedback-message').html('Error. Please try again')
+  addMessage('.feedback-message', 'Error. Please try again.')
 }
 
 const getASurveySuccess = function (data) {
@@ -82,25 +100,25 @@ const getASurveySuccess = function (data) {
 }
 
 const getASurveyFailure = function () {
-  $('.feedback-message').html('Error. Please try again')
+  addMessage('.feedback-message', 'Error. Please try again.')
 }
 
 const updateSurveySuccess = function (data) {
-  addMessage('Your survey has been updated')
+  addMessage('.feedback-message', 'Your survey has been updated')
 }
 
 const updateSurveyFailure = function () {
-  addMessage('Error. Please try again')
+  addMessage('.feedback-message', 'Error. Please try again')
 }
 
 const deleteSurveySuccess = function (data) {
   const surveyDiv = $(data).parents('div')[0]
   $(surveyDiv).html('')
-  addMessage('The survey has been deleted')
+  addMessage('.feedback-message', 'The survey has been deleted')
 }
 
 const deleteSurveyFailure = function () {
-  addMessage('Error. Please try again')
+  addMessage('.feedback-message', 'Error. Please try again')
 }
 
 module.exports = {
@@ -114,5 +132,6 @@ module.exports = {
   updateSurveyFailure,
   deleteSurveySuccess,
   deleteSurveyFailure,
-  loadSurveyForm
+  loadSurveyForm,
+  addMessage
 }

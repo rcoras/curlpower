@@ -2,6 +2,7 @@
 
 const store = require('../store')
 const loadCreateSubmissionTemplate = require('../templates/create-submission.handlebars')
+const survUi = require('../survey/ui')
 
 const displaySurveySuccess = function (data) {
   $('.main').html('')
@@ -12,21 +13,15 @@ const displaySurveySuccess = function (data) {
 }
 
 const displaySurveyFailure = function () {
-  $('.feedback-message').html('Error. Please try again')
+  survUi.addMessage('.feedback-message', 'Error. Please try again.')
 }
 
 const createSubmissionSuccess = function (data) {
-  $('.feedback-message').html('')
-  $('.feedback-message').show()
-  $('.feedback-message').html('Your answer has been submitted')
-  $('.feedback-message').fadeOut(4000)
+  survUi.addMessage('.feedback-message', 'Your answer has been submitted!')
 }
 
 const createSubmissionFailure = function () {
-  $('.feedback-message').html('')
-  $('.feedback-message').show()
-  $('.feedback-message').html('Please choose an answer')
-  $('.feedback-message').fadeOut(4000)
+  survUi.addMessage('.feedback-message', 'Please choose an answer.')
 }
 
 module.exports = {

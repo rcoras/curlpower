@@ -7,11 +7,15 @@ const survApi = require('../survey/api')
 const survUi = require('../survey/ui')
 
 const onSignUp = function (event) {
-  const data = getFormFields(this)
   event.preventDefault()
-  api.signUp(data)
-    .then(ui.signUpSuccess)
-    .catch(ui.signUpFailure)
+  const data = getFormFields(this)
+  if (data.credentials.password !== data.credentials.password_confirmation) {
+    return survUi.addMessage('.status-message-sign-up', 'Passwords do not match.')
+  } else {
+    api.signUp(data)
+      .then(ui.signUpSuccess)
+      .catch(ui.signUpFailure)
+  }
 }
 
 // signs in user
