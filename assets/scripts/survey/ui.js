@@ -12,7 +12,7 @@ const addMessage = function (message) {
   $('.feedback-message').html('')
   $('.feedback-message').show()
   $('.feedback-message').html(message)
-  $('.feedback-message').fadeOut(2500)
+  $('.feedback-message').fadeOut(4000)
 }
 
 const createSurveySuccess = function (data) {

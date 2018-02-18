@@ -8,9 +8,6 @@ $red: #d00;
 $white: #ddd;
 
 
-li {
-  color: $white;
-}
 body {
   background-color: $background;
   height: auto;
@@ -88,7 +85,7 @@ h2 {
   min-width: 400px;
   // overflow-y: scroll;
   text-align: center;
-  width: 90%;
+  width: 98%;
 }
 
 .navbar {
@@ -119,10 +116,10 @@ h2 {
 }
 
 .surv {
-  border: 1px solid $black;
+  // border: 1px solid $black;
   height: 400px;
   min-width: 400px;
-  overflow-y: scroll;
+  // overflow-y: scroll;
   width: 100%;
 }
 
@@ -134,6 +131,17 @@ h2 {
   &.sign-up {
     border: 0;
   }
+}
+
+.my-surv,
+.take-surv {
+  height: 400px;
+  border: 2px solid #8D8484;
+  overflow-y: scroll;
+}
+
+.feedback-message {
+  color: #A51212;
 }
 
 .user-actions {
