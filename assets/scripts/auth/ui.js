@@ -57,7 +57,7 @@ const signInSuccess = function (data) {
   surveyContent()
   userActions()
   feedbackMessageDiv()
-  console.log('store is, ', store)
+  // console.log('store is, ', store)
 }
 
 const signInFailure = function (error) {
@@ -75,7 +75,7 @@ const signUpFailure = function (error) {
   if (errorStatus.startsWith('4') === true) {
     $('.status-message-sign-up').text('Invalid Email or Password.')
   } else if (errorStatus.startsWith('5') === true || errorStatus.startsWith('0') === true) {
-    $('.status-message-sign-up').text('Unable to contact server.')
+    $('.status-message-sign-up').text('Invalid Email or Password.')
   }
   clearFields()
 }
@@ -87,7 +87,7 @@ const changePasswordSuccess = function (data) {
 
 const changePasswordFailure = function (error) {
   const errorStatus = error.status.toString()
-  console.log('cp store is', store)
+  // console.log('cp store is', store)
   if (errorStatus.startsWith('4') === true) {
     $('.status-message-change-password').text('Incorrect Old Password.')
   } else if (errorStatus.startsWith('5') === true || errorStatus.startsWith('0') === true) {

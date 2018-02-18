@@ -1,11 +1,12 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 $black: #000;
-$background: #ccc;
+$background: #eeeedd;
 $main-color: #8c9aff;
 $message-color: #cc4f5c;
 $red: #d00;
 $white: #ddd;
+
 
 body {
   background-color: $background;
@@ -14,12 +15,18 @@ body {
   width: 100%;
 }
 
+button {
+  float: right;
+  padding: 3px;
+}
+
 .app-title {
   color: $white;
 }
 
 .radio {
   width: 100px;
+  padding: 40px;
 }
 
 .collapse {
@@ -37,8 +44,28 @@ body {
   }
 }
 
+h2 {
+  text-align: center;
+}
+
 .dropdown-menu {
   width: 300px;
+}
+
+.edit-survey {
+  margin-left: 10px;
+  background-color: #4d4dff;
+  color: $white;
+}
+
+.delete-survey {
+  background-color: #990000;
+  color: $white;
+}
+
+.take-survey {
+  background-color: #C0C0C0;
+  color: $black;
 }
 
 .message {
@@ -54,24 +81,46 @@ body {
 .main {
   // border: 1px solid $black;
   height: 400px;
-  margin-top: 80px;
+  margin-top: 20px;
   min-width: 400px;
   // overflow-y: scroll;
   text-align: center;
-  width: 90%;
+  width: 98%;
+}
+
+.navbar {
+  border: 0;
+  background-color: #888844;
 }
 
 .surveys {
-  border: 1px solid $black;
-  height: 25px;
+  background-color: #fff;
+  height: 30px;
+  text-align: left;
+  // border: 1px solid $black;
+}
+
+.create-survey-button {
+  margin-left: 29px;
+}
+
+.refresh-survey-button {
+  margin-right: 29px;
+}
+
+.radio-style {
+  font-size: 30px;
+  margin-left: 100px;
+  text-align: center;
+  border: 0;
 }
 
 .surv {
-  width: 100%;
-  border: 1px solid $black;
+  // border: 1px solid $black;
   height: 400px;
   min-width: 400px;
-  overflow-y: scroll;
+  // overflow-y: scroll;
+  width: 100%;
 }
 
 .form {
@@ -84,7 +133,19 @@ body {
   }
 }
 
+.my-surv,
+.take-surv {
+  height: 400px;
+  border: 2px solid #8D8484;
+  overflow-y: scroll;
+}
+
+.feedback-message {
+  color: #A51212;
+}
+
 .user-actions {
-  border: 1px solid $black;
+  font-size: 18px;
+  // border: 1px solid $black;
   height: 50px;
 }
